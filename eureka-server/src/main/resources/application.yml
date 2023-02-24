@@ -1,0 +1,16 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: eureka-server
+  cloud:
+    config:
+      uri: ${CONFIG_SERVER_URL:http://localhost:8888}
+
+eureka:
+  client:
+    registerWithEureka: false # no need to register itself, since this is the server
+    fetchRegistry: false # no need to retrieve registry of other applications, since this is the server
+  server:
+    waitTimeInMsWhenSyncEmpty: 0 # wait time for subsequent sync
